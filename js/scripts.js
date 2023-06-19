@@ -49,5 +49,10 @@ function thisIsTheOrder (e) {
   let theOrder = new Order(toppingsArray, pieSize);
   theOrder.whatSize();
   theOrder.whatToppings();
-  
+
+  document.querySelector("span#total-cost").innerText= "the total cost of" + " " + theOrder.cost + ".";
 }
+
+window.addEventListener("load", function() {
+this.document.querySelector("form#pizza-order").addEventListener("submit",thisIsTheOrder);
+})
