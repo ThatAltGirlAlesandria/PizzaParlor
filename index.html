@@ -3,9 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
   <title>Pizza Parlor</title>
 </head>
 <body>
-  
+  <h1>Alesandria's Pizza Parlor</h1>
+  <div>
+    Choose Your Pizza Size:
+    <select>
+      <option>
+        Small
+      </option>
+      <option>
+        Medium
+      </option>
+      <option>
+        Large
+      </option>
+    </select>
+  </div>
+  <div>
+    Choose Your Crust Type:
+    <select>
+      <option>
+        Pan
+      </option>
+      <option>
+        Hand Stretched
+      </option>
+      <option>
+        Traditional
+      </option>
+    </select>
+  </div>
+  <div>
+    Choose Your Sauce:
+    <select>
+      <option>
+        Tomato
+      </option>
+      <option>
+        Alfredo
+      </option>
+      <option>
+        BBQ
+      </option>
+    </select>
+  </div>
+  <div>
+    Choose Your Toppings:
+    <input type="checkbox" id="chicken" value="chicken" name="pizza-toppings">
+    <label for="chicken">Chicken</label>
+    <input type="checkbox" id="bacon" value="bacon" name="pizza-toppings">
+    <label for="bacon">Bacon</label>
+    <input type="checkbox" id="beef" value="beef" name="pizza-toppings">
+    <label for="beef">Beef</label>
+    <input type="checkbox" id="sausage" value="sausage" name="pizza-toppings">
+    <label for="sausage">Sausage</label>
+    <input type="checkbox" id="pepperoni" value="pepperoni" name="pizza-toppings">
+    <label for="pepparoni">Pepperoni</label>
+    </div>
+  <button id="pizza-order" type="submit">Click to submit your order!</button>
 </body>
 </html>
