@@ -17,3 +17,8 @@ function handleSubmitOrder(e){
   });
 
 }
+
+window.addEventListener("load",function() {
+  this.document.querySelector("form#order").addEventListener("submit", handlePizzaOrder);
+}
+)
