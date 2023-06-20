@@ -7,11 +7,12 @@
   <script src="js/scripts.js"></script>
   <title>Pizza Parlor</title>
 </head>
-<body>
+<body class="container">
   <h1>Alesandria's Pizza Parlor</h1>
   <form class="order-form" id="order-form">
     <div>
       <h2>Choose Your Pizza Size:</h2>
+      <br>
       <select class="pizza-size" id="pizza-size">
         <option id="size" value="choose">
           Choose:
@@ -26,7 +27,8 @@
           Large
         </option>
       </select>
-    </div> 
+    </div>
+    <br>
     <div>
       Choose Your Toppings:
       <input type="checkbox" id="chicken" value="chicken" name="toppings">
@@ -40,6 +42,7 @@
       <input type="checkbox" id="pepperoni" value="pepperoni" name="toppings">
       <label for="pepparoni">Pepperoni</label>
       </div>
+      <br>
     <button id="submit-order" type="submit">Click to submit your order!</button>
   </form>
   <div class="order">
