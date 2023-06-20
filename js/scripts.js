@@ -1,7 +1,5 @@
-function Order(pizzaSize, pizzaCrust, pizzaSauce, pizzaToppings = []) {
+function Order(pizzaSize, pizzaToppings) {
   this.pizzaSize = pizzaSize;
-  this.pizzaCrust = pizzaCrust;
-  this.pizzaSauce = pizzaSauce
   this.pizzaToppings = pizzaToppings;
   this.cost = 0;
 }
@@ -9,28 +7,28 @@ function Order(pizzaSize, pizzaCrust, pizzaSauce, pizzaToppings = []) {
 Order.prototype.whatSize = function () {
   if (this.pizzaSize === "small") {
     this.cost = 10;
-  } else if (this.size === "medium") {
+  } else if (this.pizzaSize === "medium") {
     this.cost = 15;
-  } else if (this.size === "large") {
+  } else if (this.pizzaSize === "large") {
     this.cost = 20;
   }
   return this.cost
 }
 
 Order.prototype.whatToppings = function() {
-    if (this.whatToppings.includes("chicken")) {
+    if (this.pizzaToppings.includes("chicken")) {
       this.cost +=2;  
   }
-    if (this.whatToppings.includes("beef")) {
+    if (this.pizzaToppings.includes("beef")) {
       this.cost +=2;  
   }
-    if (this.whatToppings.includes("bacon")) {
+    if (this.pizzaToppings.includes("bacon")) {
       this.cost +=2;  
   }
-    if (this.whatToppings.includes("pepperoni")) {
+    if (this.pizzaToppings.includes("pepperoni")) {
       this.cost +=2;  
   }
-    if (this.whatToppings.includes("sausage")) {
+    if (this.pizzaToppings.includes("sausage")) {
       this.cost +=2;  
   }
   return this.cost;
@@ -41,18 +39,18 @@ function thisIsTheOrder (e) {
 
   let pieSize = document.getElementById("pizza-size").value;
   let toppingsArray = [];
-    document.querySelector('input[name=toppings]:checked')
-    .forEach(function(element) {
+    document.querySelectorAll('input[name=toppings]:checked')
+    .forEach(function (element) {
       let toppings = element['value'];
       toppingsArray.push(toppings);
     });
-  let theOrder = new Order(toppingsArray, pieSize);
+  const theOrder = new Order(toppingsArray, pieSize);
   theOrder.whatSize();
   theOrder.whatToppings();
-
-  document.querySelector("span#total-cost").innerText= "the total cost of" + " " + theOrder.cost + ".";
+  
+  document.querySelector("span#pizza-order").innerText= "the total cost of" + " " + theOrder.cost + ".";
 }
 
 window.addEventListener("load", function() {
-this.document.querySelector("form#pizza-order").addEventListener("submit",thisIsTheOrder);
+document.querySelector("form#order-form").addEventListener("submit", thisIsTheOrder);
 })
