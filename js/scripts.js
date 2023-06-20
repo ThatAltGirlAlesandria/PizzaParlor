@@ -1,6 +1,6 @@
-function Order(pizzaSize, pizzaToppings) {
-  this.pizzaSize = pizzaSize;
+function Order (pizzaToppings, pizzaSize) {
   this.pizzaToppings = pizzaToppings;
+  this.pizzaSize = pizzaSize;
   this.cost = 0;
 }
 
@@ -15,21 +15,21 @@ Order.prototype.whatSize = function () {
   return this.cost
 }
 
-Order.prototype.whatToppings = function() {
-    if (this.pizzaToppings.includes("chicken")) {
-      this.cost +=2;  
+Order.prototype.whatToppings = function () {
+  if (this.pizzaToppings.includes("chicken")) {
+    this.cost += 2;
+  } 
+  if (this.pizzaToppings.includes("bacon")) {
+    this.cost += 2;
+  } 
+  if (this.pizzaToppings.includes("beef")) {
+    this.cost += 2;
+  } 
+  if (this.pizzaToppings.includes("sausage")) {
+    this.cost += 2;
   }
-    if (this.pizzaToppings.includes("beef")) {
-      this.cost +=2;  
-  }
-    if (this.pizzaToppings.includes("bacon")) {
-      this.cost +=2;  
-  }
-    if (this.pizzaToppings.includes("pepperoni")) {
-      this.cost +=2;  
-  }
-    if (this.pizzaToppings.includes("sausage")) {
-      this.cost +=2;  
+  if (this.pizzaToppings.includes("pepperoni")) {
+    this.cost += 2;
   }
   return this.cost;
 }
@@ -47,8 +47,9 @@ function thisIsTheOrder (e) {
   const theOrder = new Order(toppingsArray, pieSize);
   theOrder.whatSize();
   theOrder.whatToppings();
+  console.log(theOrder)
   
-  document.querySelector("span#pizza-order").innerText= "the total cost of" + " " + theOrder.cost + ".";
+  document.querySelector("span#pizza-order").innerText= "The total cost of your order is: " + theOrder.cost + ".";
 }
 
 window.addEventListener("load", function() {

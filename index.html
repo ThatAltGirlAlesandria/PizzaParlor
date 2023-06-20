@@ -9,10 +9,13 @@
 </head>
 <body>
   <h1>Alesandria's Pizza Parlor</h1>
-  <form class="form">
+  <form class="order-form" id="order-form">
     <div>
       <h2>Choose Your Pizza Size:</h2>
-      <select class="pizza-size" id="pizzaSize">
+      <select class="pizza-size" id="pizza-size">
+        <option id="size" value="choose">
+          Choose:
+        </option>
         <option id="size" value="small">
           Small
         </option>
@@ -26,21 +29,20 @@
     </div> 
     <div>
       Choose Your Toppings:
-      <input type="checkbox" id="chicken" value="chicken" name="pizza-toppings">
+      <input type="checkbox" id="chicken" value="chicken" name="toppings">
       <label for="chicken">Chicken</label>
-      <input type="checkbox" id="bacon" value="bacon" name="pizza-toppings">
+      <input type="checkbox" id="bacon" value="bacon" name="toppings">
       <label for="bacon">Bacon</label>
-      <input type="checkbox" id="beef" value="beef" name="pizza-toppings">
+      <input type="checkbox" id="beef" value="beef" name="toppings">
       <label for="beef">Beef</label>
-      <input type="checkbox" id="sausage" value="sausage" name="pizza-toppings">
+      <input type="checkbox" id="sausage" value="sausage" name="toppings">
       <label for="sausage">Sausage</label>
-      <input type="checkbox" id="pepperoni" value="pepperoni" name="pizza-toppings">
+      <input type="checkbox" id="pepperoni" value="pepperoni" name="toppings">
       <label for="pepparoni">Pepperoni</label>
       </div>
     <button id="submit-order" type="submit">Click to submit your order!</button>
   </form>
-  <div class="hidden">
-    <h2>Your order is: </h2>
+  <div class="order">
     <span id="pizza-order"></span>
   </div>
 </body>
